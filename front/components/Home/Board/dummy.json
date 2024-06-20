@@ -1,0 +1,27 @@
+{
+  "track": {
+    "title": "Track Title",
+    "artist": "Artist Name",
+    "albumArt": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+    "progress": 50
+  },
+  "notes": [
+    {
+      "title": "Happy List",
+      "content": ["Flowers", "Eat Healthy", "Nudes"]
+    },
+    {
+      "title": "Appreciation for My Girlfriend",
+      "content": "I am so grateful for everything you do. Your kindness, love, and support mean the world to me. I cherish every moment we spend together and look forward to creating more beautiful memories."
+    },
+    {
+      "title": "Planning Our Trip to Europe",
+      "content": "We need to decide on the destinations we want to visit. Don't forget to check the travel restrictions and book our tickets early. Let's make a list of must-see places and local foods to try!"
+    },
+    {
+      "title": "Favorite Moments Together",
+      "content": ["Our first date", "Weekend getaways", "Laughing together at silly jokes", "Supporting each other during tough times"]
+    }
+  ],
+  "letter": "You have a new love letter!"
+}
