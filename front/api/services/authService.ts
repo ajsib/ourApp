@@ -1,4 +1,5 @@
-// api/services/authService.js
+// api/services/authService.ts
+import authFetch from './authFetch';
 import { API_URL } from '../config';
 import { ENDPOINTS } from '../endpoints';
 import { User } from '@/components/Landing/types';
@@ -8,9 +9,11 @@ interface RegisterUserResponse {
   user?: User;
 }
 
-interface LoginUserResponse {
+export interface LoginUserResponse {
+  token: string;
+  refreshToken: string;
+  userId: string;
   error?: string;
-  token?: string;
 }
 
 export const registerUser = async (
@@ -43,7 +46,6 @@ export const registerUser = async (
 
   return response.json();
 };
-
 
 export const loginUser = async (
   email: string,

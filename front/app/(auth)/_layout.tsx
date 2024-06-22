@@ -1,16 +1,12 @@
 // app/(auth)/_layout.tsx
 import { Redirect, Stack } from 'expo-router';
 import { useAuth } from '@/components/AuthContext';
-import { useEffect } from 'react';
-import { ActivityIndicator, Text, useColorScheme, View, StyleSheet } from 'react-native';
+import { ActivityIndicator, useColorScheme, View, StyleSheet } from 'react-native';
 
 export default function AuthLayout() {
-  const { session, isLoading } = useAuth();
+  const { session, isLoading, partnerInfo } = useAuth();
+  console.log(partnerInfo)
   const colorScheme = useColorScheme();
-
-  useEffect(() => {
-    console.log('Auth state changed:', { session, isLoading });
-  }, [session, isLoading]);
 
   if (isLoading) {
     return (
@@ -22,6 +18,10 @@ export default function AuthLayout() {
 
   if (!session) {
     return <Redirect href="/Landing" />;
+  }
+
+  if (session && !partnerInfo) {
+    return <Redirect href="Landing/Connect" />;
   }
 
   return <Stack screenOptions={{ headerShown: false }} />;

@@ -34,7 +34,7 @@ export const LoginProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (response.error) {
         setError(response.error);
       } else {
-        signIn(response.token);
+        signIn(response.token, response.refreshToken, response.userId);
       }
     } catch (err) {
       setError('Login failed. Please try again.');
